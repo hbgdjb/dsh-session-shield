@@ -1,0 +1,7 @@
+# Session Shield — bundle patch
+# Loader YAML 方言：insert 插入插件行；config 传给 apply(ctx, config)。
+# 这里的 name 必须是「安装后能被解析到的模块名」——即本包自己的 package.json name。
+# 停用方式：把下面整段注释掉，或改成 config: { enabled: false }。
+- insert:
+    - id: session-shield
+      name: dsh-session-shield
