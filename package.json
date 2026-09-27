@@ -1,0 +1,35 @@
+{
+  "name": "dsh-session-shield",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh-bundle",
+    "tool-call",
+    "session-integrity",
+    "llm-stream",
+    "guard"
+  ],
+  "description": "Guards DSH session logs from malformed model tool calls (empty id/name, non-string arguments) so a bad call can never make a session unloadable",
+  "meta": {
+    "title": "Session Shield",
+    "description": "让会话日志永远不会因为一次畸形 tool call（空 id / 空 name / 非法 arguments）而打不开：坏调用自动修复，正常调用原样通过，最多当轮报错，历史永远可加载。装上即用，零配置、零依赖、无需客户端改动。"
+  },
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
